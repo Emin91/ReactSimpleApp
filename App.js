@@ -5,26 +5,27 @@ import { height, width } from './constans'
 
 export default class App extends Component {
 
- alert_msg = () => {
-  Alert.alert(
-    'This is React Native Alert message',
-    "This is simple message",
-    [ 
+// Other Message box
+//  alert_msg = () => {
+//   Alert.alert(
+//     'This is React Native Alert message',
+//     "This is simple message",
+//     [ 
       
-      {text: 'Exit', onPress: () => console.log('Was clicked Exit button')},
-      {
-        text: 'Cancel',
-        onPress: () => console.log('Cancel Pressed'),
-        style: 'default',
-      },
-      {text: 'OK', onPress: () => console.log('OK Pressed')},
-    ],
-    {cancelable: false},
-  );
- }
+//       {text: 'Exit', onPress: () => console.log('Was clicked Exit button')},
+//       {
+//         text: 'Cancel',
+//         onPress: () => console.log('Cancel Pressed'),
+//         style: 'default',
+//       },
+//       {text: 'OK', onPress: () => console.log('OK Pressed')},
+//     ],
+//     {cancelable: false},
+//   );
+//  }
 
 	render() {
-        console.log('height, width', height, width)
+        console.log('height', height, 'widht', width)
 		return (
       <View style={styles.container}>
           <View style={styles.imageLogoView}>
@@ -42,8 +43,9 @@ export default class App extends Component {
             </View>    
           </View>
           <View>
-            <TouchableOpacity style={styles.button} onPress={this.alert_msg}>  
-              <Text style={styles.buttonText}>Click Me!</Text>
+            <TouchableOpacity style={styles.button}  
+                onPress={() =>Alert.alert('', "This is simple message", [{text: 'OK', onPress: () =>console.log('Clicked "Click ME!" button')}])}>  
+                  <Text style={styles.buttonText}>Click Me!</Text>
             </TouchableOpacity>
           </View>
       </View>   
