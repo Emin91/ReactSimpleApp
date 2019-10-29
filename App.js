@@ -1,10 +1,11 @@
 
 import React, {Component} from 'react';
-import {StyleSheet, View, Alert, TouchableOpacity, Text, Image, Dimensions} from 'react-native'
-import ImageZoom from 'react-native-image-pan-zoom'
+import {StyleSheet, View, Alert, Text, Image, TouchableOpacity} from 'react-native'
+import { height, width } from './constans'
+//import { createStackNavigator } from 'react-navigation'
 
 
-export default class App extends Component {
+export default class Page2 extends Component {
 
  alert_msg = () => {
   Alert.alert(
@@ -25,18 +26,21 @@ export default class App extends Component {
  }
 
 	render() {
+        console.log('height, width', height, width)
 		return (
       <View style={styles.container}>
-        <ImageZoom
-              cropHeight={100}
-              cropWidth={Dimensions.get('window').width}
-              imageWidth={350}
-              imageHeight={45}>
-            <Image style={styles.image}
-              source={{uri: 'https://i.ibb.co/DDKtgJy/deveducationlogo.png'}}/>
-          </ImageZoom>
+          <View style={styles.imageLogoView}>
+            <Image style={styles.imageLogo} 
+                    source={{ uri:"https://i.ibb.co/DDKtgJy/deveducationlogo.png" }}/>
+          </View>
+          <View style={styles.mainTextView}>
+            <Text style={styles.mainText}>React Native</Text>
+          </View>
           <View>
-            <Text style={styles.mainText}>Hello Everybody!</Text>
+          <View>
+             <Image style={styles.gifAnim}
+                    source={{ uri:"https://media.giphy.com/media/DdlNfYtvJzleM/giphy.gif" }}/>
+          </View>    
           </View>
           <View>
           <TouchableOpacity style={styles.button} onPress={this.alert_msg}>  
@@ -48,35 +52,61 @@ export default class App extends Component {
   } 
 } 
 
+// export default createStackNavigator({
+//     L
+// })
 
 const styles = StyleSheet.create({
 
   container: {
     flex: 1,
-    paddingTop: 15,
-    backgroundColor: '#38393b',
+    paddingTop: 20,
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    backgroundColor: '#262929',
 },
-button: {
-  borderRadius: 30,
-  marginTop: "107%",
-  alignItems: 'center',
-  backgroundColor: '#00b8d9',
-  padding: 10,
-},
-buttonText: {
-  fontWeight: '100',
-  color: '#FFFFFF',
-  fontSize: 20,
-  textAlign: 'center',
-},
-image: {
-    width: 350, 
-    height: 45,
-},
-	mainText: {
-    fontWeight: 'bold',
-    color: '#00b8d9',
-    fontSize: 40,
-    textAlign: 'center',
-},
+    gifAnim: {
+        width: 350,
+        height: 350,
+    },
+
+    imageLogoView: {
+        width: 500,
+        height: 80,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#00b8d9',
+        borderRadius: 10,
+    },
+
+    imageLogo: {
+        width: 350, 
+        height: 45,
+    },
+
+    mainTextView: {
+        marginTop: 0,
+    },
+
+    mainText: {
+        fontWeight: 'bold',
+        color: '#00b8d9',
+        fontSize: 50,
+        
+    },
+
+    button: {
+        width: 350,
+        borderRadius: 15,
+        marginTop: "10%",
+        backgroundColor: '#00b8d9',
+        padding: 20,
+    },
+
+    buttonText: {
+        fontWeight: '100',
+        color: '#FFFFFF',
+        fontSize: 20,
+        textAlign: 'center',
+    },
 });	

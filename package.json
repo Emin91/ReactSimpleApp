@@ -12,7 +12,8 @@
   "dependencies": {
     "react": "16.9.0",
     "react-native": "0.61.2",
-    "react-native-image-pan-zoom": "^2.1.11"
+    "react-native-image-pan-zoom": "^2.1.11",
+    "react-navigation": "^4.0.10"
   },
   "devDependencies": {
     "@babel/core": "7.6.4",
