@@ -1,11 +1,9 @@
 
 import React, {Component} from 'react';
-import {StyleSheet, View, Alert, Text, Image, TouchableOpacity} from 'react-native'
+import {StyleSheet, View, Alert, Text, Image, Button, TouchableOpacity} from 'react-native'
 import { height, width } from './constans'
-//import { createStackNavigator } from 'react-navigation'
 
-
-export default class Page2 extends Component {
+export default class App extends Component {
 
  alert_msg = () => {
   Alert.alert(
@@ -52,9 +50,7 @@ export default class Page2 extends Component {
   } 
 } 
 
-// export default createStackNavigator({
-//     L
-// })
+
 
 const styles = StyleSheet.create({
 
@@ -81,7 +77,7 @@ const styles = StyleSheet.create({
 
     imageLogo: {
         width: 350, 
-        height: 45,
+        height: 50,
     },
 
     mainTextView: {
