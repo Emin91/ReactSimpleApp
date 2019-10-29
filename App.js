@@ -1,6 +1,6 @@
 
 import React, {Component} from 'react';
-import {StyleSheet, View, Alert, Text, Image, Button, TouchableOpacity} from 'react-native'
+import {StyleSheet, View, Alert, Text, Image, ToastAndroid, TouchableOpacity} from 'react-native'
 import { height, width } from './constans'
 
 export default class App extends Component {
@@ -32,18 +32,19 @@ export default class App extends Component {
                     source={{ uri:"https://i.ibb.co/DDKtgJy/deveducationlogo.png" }}/>
           </View>
           <View style={styles.mainTextView}>
-            <Text style={styles.mainText}>React Native</Text>
+            <Text style={styles.mainText} 
+                  onPress={() =>ToastAndroid.show('React Native simple toast notification', ToastAndroid.SHORT)}>React Native</Text>
           </View>
           <View>
-          <View>
-             <Image style={styles.gifAnim}
-                    source={{ uri:"https://media.giphy.com/media/DdlNfYtvJzleM/giphy.gif" }}/>
-          </View>    
+            <View>
+              <Image style={styles.gifAnim} 
+                      source={{ uri:"https://media.giphy.com/media/DdlNfYtvJzleM/giphy.gif" }}/>
+            </View>    
           </View>
           <View>
-          <TouchableOpacity style={styles.button} onPress={this.alert_msg}>  
-            <Text style={styles.buttonText}>Click Me!</Text>
-          </TouchableOpacity>
+            <TouchableOpacity style={styles.button} onPress={this.alert_msg}>  
+              <Text style={styles.buttonText}>Click Me!</Text>
+            </TouchableOpacity>
           </View>
       </View>   
 	  );
